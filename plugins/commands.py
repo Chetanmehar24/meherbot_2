@@ -171,21 +171,21 @@ async def start(client, message):
                 f_caption = f"{title}"
             
             # check verfication start
-            # try:
-            #     print('A user hit this case....')
-            #     zab_user_id = message.from_user.id
-            #     if IS_LAZYUSER_VERIFICATION and not await db.has_prime_status(zab_user_id) and not await check_verification(client, zab_user_id):
-            #         lazy_url = await get_token(client, zab_user_id, f"https://telegram.me/{temp.U_NAME}?start=")
-            #         lazy_verify_btn = [[
-            #             InlineKeyboardButton("✅ Verify ✅", url=lazy_url)
-            #         ]]
-            #         await message.reply_text(
-            #             text="You are not verified user ! please verify to get unlimited files or simply you can buy premium",
-            #             reply_markup=InlineKeyboardMarkup(lazy_verify_btn)
-            #         )
-            #         return
-            # except Exception as e:
-            #     print(f"Exception occured : {str(e)}")
+            try:
+                print('A user hit this case....')
+                zab_user_id = message.from_user.id
+                if IS_LAZYUSER_VERIFICATION and not await db.has_prime_status(zab_user_id) and not await check_verification(client, zab_user_id):
+                    lazy_url = await get_token(client, zab_user_id, f"https://telegram.me/{temp.U_NAME}?start=")
+                    lazy_verify_btn = [[
+                        InlineKeyboardButton("✅ Verify ✅", url=lazy_url)
+                    ]]
+                    await message.reply_text(
+                        text="🚩 You are not verified user ! please verify to get unlimited files. 🚀",
+                        reply_markup=InlineKeyboardMarkup(lazy_verify_btn)
+                    )
+                    return
+            except Exception as e:
+                print(f"Exception occured : {str(e)}")
             # ./check verfication end
             # LAZY_DIVERTING_CHANNEL_ID = int(environ.get('LAZY_DIVERTING_CHANNEL_ID', '-1004873483784 -10028934982 -1009389843894 -10048934898934').split())
             select_random_channel = random.choice(LAZY_DIVERTING_CHANNEL_ID)
@@ -333,6 +333,9 @@ async def start(client, message):
         if is_valid == True:
             await message.reply_text(
                 text=f"<b>Hey {message.from_user.mention}, You are successfully verified !\nNow you have unlimited access for all movies till today midnight.</b>",
+                reply_markup=InlineKeyboardMarkup([[
+                    InlineKeyboardButton("📺 GET FILE ✔", url=f"https://telegram.me/{temp.U_NAME}?start=files_{file_id}")
+                ]]),
                 protect_content=True
             )
             await verify_user(client, userid, token)
@@ -471,21 +474,21 @@ async def start(client, message):
         pre, file_id = ((base64.urlsafe_b64decode(data + "=" * (-len(data) % 4))).decode("ascii")).split("_", 1)
         try:
             # check verfication start
-            # try:
-            #     print('A user hit this case....')
-            #     zab_user_id = message.from_user.id
-            #     if IS_LAZYUSER_VERIFICATION and not await db.has_prime_status(zab_user_id) and not await check_verification(client, zab_user_id):
-            #         lazy_url = await get_token(client, zab_user_id, f"https://telegram.me/{temp.U_NAME}?start=")
-            #         lazy_verify_btn = [[
-            #             InlineKeyboardButton("✅ Verify ✅", url=lazy_url)
-            #         ]]
-            #         await message.reply_text(
-            #             text="You are not verified user ! please verify to get unlimited files or simply you can buy premium",
-            #             reply_markup=InlineKeyboardMarkup(lazy_verify_btn)
-            #         )
-            #         return
-            # except Exception as e:
-            #     print(f"Exception occured : {str(e)}")
+            try:
+                print('A user hit this case....')
+                zab_user_id = message.from_user.id
+                if IS_LAZYUSER_VERIFICATION and not await db.has_prime_status(zab_user_id) and not await check_verification(client, zab_user_id):
+                    lazy_url = await get_token(client, zab_user_id, f"https://telegram.me/{temp.U_NAME}?start=")
+                    lazy_verify_btn = [[
+                        InlineKeyboardButton("✅ Verify ✅", url=lazy_url)
+                    ]]
+                    await message.reply_text(
+                        text="🚩 You are not verified user ! please verify to get unlimited files. 🚀",
+                        reply_markup=InlineKeyboardMarkup(lazy_verify_btn)
+                    )
+                    return
+            except Exception as e:
+                print(f"Exception occured : {str(e)}")
             # ./check verfication end
             select_random_channel = random.choice(LAZY_DIVERTING_CHANNEL_ID)
             SELECTED_CHANNEL = select_random_channel
@@ -570,21 +573,21 @@ async def start(client, message):
         f_caption = f"{files.file_name}"
     
     # check verfication start
-    # try:
-    #     print('A user hit this case....')
-    #     zab_user_id = message.from_user.id
-    #     if IS_LAZYUSER_VERIFICATION and not await db.has_prime_status(zab_user_id) and not await check_verification(client, zab_user_id):
-    #         lazy_url = await get_token(client, zab_user_id, f"https://telegram.me/{temp.U_NAME}?start=")
-    #         lazy_verify_btn = [[
-    #             InlineKeyboardButton("✅ Verify ✅", url=lazy_url)
-    #         ]]
-    #         await message.reply_text(
-    #             text="You are not verified user ! please verify to get unlimited files or simply you can buy premium",
-    #             reply_markup=InlineKeyboardMarkup(lazy_verify_btn)
-    #         )
-    #         return
-    # except Exception as e:
-    #     print(f"Exception occured : {str(e)}")
+    try:
+        print('A user hit this case....')
+        zab_user_id = message.from_user.id
+        if IS_LAZYUSER_VERIFICATION and not await db.has_prime_status(zab_user_id) and not await check_verification(client, zab_user_id):
+            lazy_url = await get_token(client, zab_user_id, f"https://telegram.me/{temp.U_NAME}?start=")
+            lazy_verify_btn = [[
+                InlineKeyboardButton("✅ Verify ✅", url=lazy_url)
+            ]]
+            await message.reply_text(
+                text="🚩 You are not verified user ! please verify to get unlimited files. 🚀",
+                reply_markup=InlineKeyboardMarkup(lazy_verify_btn)
+            )
+            return
+    except Exception as e:
+        print(f"Exception occured : {str(e)}")
     # ./check verfication end
     select_random_channel = random.choice(LAZY_DIVERTING_CHANNEL_ID)
     SELECTED_CHANNEL = select_random_channel
